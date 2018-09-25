@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/r-slider.js"></script>
+    <script src="js/r-slider-components.js"></script>
+    <link rel="stylesheet" href="css/default.css" />
+
+    <title></title>
+    <style>
+        .r-slider-button {
+            background: #2196f3;
+            border-radius: 100%;
+            text-align: center;
+        }
+
+        .r-slider-line {
+            background: #ccc;
+        }
+
+        .r-slider-fill {
+            background: #2196f3;
+        }
+
+        .r-slider-number {
+            left: calc(50% - 15px);
+            line-height: 20px;
+            text-align: center;
+            color: #fff;
+            font-size: 12px;
+            width: 30px;
+            height: 20px;
+            top: -23px;
+            background: #333;
+            border-radius: 3px;
+        }
+
+            .r-slider-number:before {
+                content: "";
+                position: absolute;
+                left: 10px;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid #333;
+                top: 20px;
+            }
+    </style>
+</head>
+<body>
+    <center style="line-height:50px; background:#eee;font-size:20px;color:#888;margin-bottom:20px;">
+        Show Number
+    </center>
+
+    <table style="width: 300px;margin-left: calc(50% - 150px);">
+        <tr>
+            <td id="container" style="width: 240px;height: 40px;position: relative;background: #eee;"></td>
+            <td class="result" style="background:#eee"></td>
+        </tr>
+    </table>
+    <center style="line-height:50px;">
+        note:set (showNumber : true) for show value at top of point.
+    </center>
+    <center style="line-height:50px; background:#eee;margin-top:50px;">
+        <a href="https://codepen.io/mohammadfeiz/pen/mGGKqL">live edit in codepen</a>
+    </center>
+    <script>
+        var A = new slider({
+            start: -100,
+            step: 1,
+            end: 100,
+            value: 0,
+            container: "#container",
+            showNumber: true
+        });
+    </script>
+</body>
+</html>
