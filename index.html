@@ -1,0 +1,529 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/r-slider.js"></script>
+
+    <title></title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #aaa;
+            position: relative;
+        }
+
+        .result {
+            width: 80px;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .code {
+            width: 200px;
+        }
+        strong {
+            background: #eee;
+        }
+        .container {
+            width:200px;
+        }
+
+
+        .switch {
+            width: 40px;
+            height: 10px;
+            position: absolute;
+            left: calc(50% - 20px);
+            top: calc(50% - 5px);
+            border: 1px solid #aaa;
+            border-radius: 20px;
+        }
+
+        .r-slider-button {
+            background: #2196f3;
+            border-radius: 100%;
+            text-align: center;
+        }
+
+        .r-slider-line {
+            background: #ccc;
+        }
+
+        .r-slider-fill {
+            background: #2196f3;
+        }
+
+        .r-slider-number {
+            position: absolute;
+            background: #000;
+            color: #fff;
+            width: 28px;
+            left: calc(50% - 14px);
+            top: -16px;
+            font-size: 12px;
+            border-radius: 3px;
+        }
+
+        .r-slider-text {
+            font-size: 10px;
+            text-align: center;
+        }
+
+        .r-slider-pin {
+            background: #ccc;
+        }
+
+        .r-slider-label {
+            font-size: 10px;
+            top: 16px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <table style="">
+        <tr>
+            <td id="c1" class="container"></td>
+            <td class="result"></td>
+            <td class="code">
+                <code>
+                    var a1 = new slider({<br>
+                    &nbsp;&nbsp;&nbsp;container:"#c1",<br>
+                    &nbsp;&nbsp;&nbsp;start : -100,<br>
+                    &nbsp;&nbsp;&nbsp;end:100,<br>
+                    &nbsp;&nbsp;&nbsp;step:1,<br>
+                    &nbsp;&nbsp;&nbsp;value:0,<br>
+                    });
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td id="c2" class="container"></td>
+            <td class="result"></td>
+            <td class="code">
+                <code>
+                    var a2 = new slider({<br>
+                    &nbsp;&nbsp;&nbsp;container:"#c2",<br>
+                    &nbsp;&nbsp;&nbsp;start : -100,<br>
+                    &nbsp;&nbsp;&nbsp;end:100,<br>
+                    &nbsp;&nbsp;&nbsp;step:1,<br>
+                    &nbsp;&nbsp;&nbsp;value:0,<br>
+                    &nbsp;&nbsp;&nbsp;<strong>showValue:true</strong>,<br>
+                    });
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td id="c3" class="container"></td>
+            <td class="result"></td>
+            <td class="code">
+                <code>
+                    var a3 = new slider({<br>
+                    &nbsp;&nbsp;&nbsp;container:"#c3",<br>
+                    &nbsp;&nbsp;&nbsp;start : -100,<br>
+                    &nbsp;&nbsp;&nbsp;end:100,<br>
+                    &nbsp;&nbsp;&nbsp;step:1,<br>
+                    &nbsp;&nbsp;&nbsp;value:0,<br>
+                    &nbsp;&nbsp;&nbsp;showValue:true,<br>
+                    &nbsp;&nbsp;&nbsp;<strong>ondrag:change</strong>,<br>
+                    });
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td id="c4" class="container"></td>
+            <td class="result"></td>
+            <td class="code">
+                <code>
+                    var a4 = new slider({<br>
+                    &nbsp;&nbsp;&nbsp;container:"#c4",<br>
+                    &nbsp;&nbsp;&nbsp;start : -100,<br>
+                    &nbsp;&nbsp;&nbsp;end:100,<br>
+                    &nbsp;&nbsp;&nbsp;step:1,<br>
+                    &nbsp;&nbsp;&nbsp;value:0,<br>
+                    &nbsp;&nbsp;&nbsp;showValue:true,<br>
+                    &nbsp;&nbsp;&nbsp;ondrag:change,<br>
+                    &nbsp;&nbsp;&nbsp;<strong>fixValue:true</strong>,<br>
+                    });
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td id="c5" class="container"></td>
+            <td class="result"></td>
+            <td class="code">
+                <code>
+                    var a5 = new slider({<br>
+                    &nbsp;&nbsp;&nbsp;container:"#c5",<br>
+                    &nbsp;&nbsp;&nbsp;start : -100,<br>
+                    &nbsp;&nbsp;&nbsp;end:100,<br>
+                    &nbsp;&nbsp;&nbsp;step:1,<br>
+                    &nbsp;&nbsp;&nbsp;value:0,<br>
+                    &nbsp;&nbsp;&nbsp;showValue:true,<br>
+                    &nbsp;&nbsp;&nbsp;<strong>onchange:change</strong>,<br>
+                    });
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td id="c6" class="container"></td>
+            <td class="result"></td>
+            <td class="code">
+                <code>
+                    var a6 = new slider({<br>
+                    &nbsp;&nbsp;&nbsp;container:"#c6",<br>
+                    &nbsp;&nbsp;&nbsp;start : -100,<br>
+                    &nbsp;&nbsp;&nbsp;end:100,<br>
+                    &nbsp;&nbsp;&nbsp;step:1,<br>
+                    &nbsp;&nbsp;&nbsp;value:0,<br>
+                    &nbsp;&nbsp;&nbsp;showValue:true,<br>
+                    &nbsp;&nbsp;&nbsp;ondrag:change,<br>
+                    &nbsp;&nbsp;&nbsp;<strong>min:-50</strong>,<br>
+                    &nbsp;&nbsp;&nbsp;<strong>max:60</strong>,<br>
+                    });
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td id="c7" class="container"></td>
+            <td class="result"></td>
+            <td class="code">
+                <code>
+                    var a7 = new slider({<br>
+                    &nbsp;&nbsp;&nbsp;container:"#c7",<br>
+                    &nbsp;&nbsp;&nbsp;start : -100,<br>
+                    &nbsp;&nbsp;&nbsp;end:100,<br>
+                    &nbsp;&nbsp;&nbsp;step:1,<br>
+                    &nbsp;&nbsp;&nbsp;showValue:true,<br>
+                    &nbsp;&nbsp;&nbsp;ondrag:change,<br>
+                    &nbsp;&nbsp;&nbsp;<strong>value:[-20,30]</strong>,<br>
+                    });
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td id="c8" class="container"></td>
+            <td class="result"></td>
+            <td class="code">
+                <code>
+                    var a8 = new slider({<br>
+                    &nbsp;&nbsp;&nbsp;container:"#c8",<br>
+                    &nbsp;&nbsp;&nbsp;start : -100,<br>
+                    &nbsp;&nbsp;&nbsp;end:100,<br>
+                    &nbsp;&nbsp;&nbsp;step:1,<br>
+                    &nbsp;&nbsp;&nbsp;showValue:true,<br>
+                    &nbsp;&nbsp;&nbsp;ondrag:change,<br>
+                    &nbsp;&nbsp;&nbsp;<strong>value:[-80,-30,20,70]</strong>,<br>
+                    });
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td id="c9" class="container"></td>
+            <td class="result"></td>
+            <td class="code">
+                <code>
+                    var a9 = new slider({<br>
+                    &nbsp;&nbsp;&nbsp;container:"#c9",<br>
+                    &nbsp;&nbsp;&nbsp;start : -100,<br>
+                    &nbsp;&nbsp;&nbsp;end:100,<br>
+                    &nbsp;&nbsp;&nbsp;step:1,<br>
+                    &nbsp;&nbsp;&nbsp;value:0,<br>
+                    &nbsp;&nbsp;&nbsp;showValue:true,<br>
+                    &nbsp;&nbsp;&nbsp;ondrag:change,<br>
+                    &nbsp;&nbsp;&nbsp;<strong>changable:false</strong>,<br>
+                    });
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td id="c10" class="container"></td>
+            <td class="result"></td>
+            <td class="code">
+                <code>
+                    var a10 = new slider({<br>
+                    &nbsp;&nbsp;&nbsp;container:"#c10",<br>
+                    &nbsp;&nbsp;&nbsp;start : -100,<br>
+                    &nbsp;&nbsp;&nbsp;end:100,<br>
+                    &nbsp;&nbsp;&nbsp;step:10,<br>
+                    &nbsp;&nbsp;&nbsp;value:0,<br>
+                    &nbsp;&nbsp;&nbsp;showValue:true,<br>
+                    &nbsp;&nbsp;&nbsp;ondrag:change,<br>
+                    &nbsp;&nbsp;&nbsp;<strong>pinStep:10</strong>,<br>
+                    });
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td id="c11" class="container"></td>
+            <td class="result"></td>
+            <td class="code">
+                <code>
+                    var a11 = new slider({<br>
+                    &nbsp;&nbsp;&nbsp;container:"#c11",<br>
+                    &nbsp;&nbsp;&nbsp;start : -100,<br>
+                    &nbsp;&nbsp;&nbsp;end:100,<br>
+                    &nbsp;&nbsp;&nbsp;step:10,<br>
+                    &nbsp;&nbsp;&nbsp;value:0,<br>
+                    &nbsp;&nbsp;&nbsp;showValue:true,<br>
+                    &nbsp;&nbsp;&nbsp;ondrag:change,<br>
+                    &nbsp;&nbsp;&nbsp;pinStep:20,<br>
+                    &nbsp;&nbsp;&nbsp;<strong>labelStep:40</strong>,<br>
+                    });
+                </code>
+            </td>
+        </tr>
+
+        <tr>
+            <td id="c12" class="container">
+                <div class="switch"></div>
+            </td>
+            <td class="result"></td>
+            <td class="code">
+                <code>
+                    var a12 = new slider({<br>
+                    &nbsp;&nbsp;&nbsp;container:"#c12 .switch",<br>
+                    &nbsp;&nbsp;&nbsp;start :0,<br>
+                    &nbsp;&nbsp;&nbsp;end:1,<br>
+                    &nbsp;&nbsp;&nbsp;step:1,<br>
+                    &nbsp;&nbsp;&nbsp;value:0,<br>
+                    &nbsp;&nbsp;&nbsp;ondrag:Switch,<br>
+                    });
+                </code>
+            </td>
+            
+        </tr>
+        <tr>
+            <td id="c13" class="container">
+                <div class="switch"></div>
+            </td>
+            <td class="result"></td>
+            <td class="code">
+                <code>
+                    var a12 = new slider({<br>
+                    &nbsp;&nbsp;&nbsp;container:"#c12 .switch",<br>
+                    &nbsp;&nbsp;&nbsp;start :0,<br>
+                    &nbsp;&nbsp;&nbsp;end:1,<br>
+                    &nbsp;&nbsp;&nbsp;step:1,<br>
+                    &nbsp;&nbsp;&nbsp;value:0,<br>
+                    &nbsp;&nbsp;&nbsp;ondrag:Switch,<br>
+                    &nbsp;&nbsp;&nbsp;<strong>text: ["ON", "OFF"],</strong><br>
+                    &nbsp;&nbsp;&nbsp;<strong>style: { </strong><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>line_width: 0 </strong><br>
+                    &nbsp;&nbsp;&nbsp;<strong>}</strong><br>
+                    });
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td id="c14" class="container"></td>
+            <td class="result"></td>
+            <td class="code">
+                <code>
+                    var a14 = new slider({<br>
+                    &nbsp;&nbsp;&nbsp;container:"#c14",<br>
+                    &nbsp;&nbsp;&nbsp;start :0,<br>
+                    &nbsp;&nbsp;&nbsp;end:100,<br>
+                    &nbsp;&nbsp;&nbsp;step:1,<br>
+                    &nbsp;&nbsp;&nbsp;value:20,<br>
+                    &nbsp;&nbsp;&nbsp;<strong>style: { </strong><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>margin: 30 </strong><br>
+                    &nbsp;&nbsp;&nbsp;<strong>}</strong><br>
+                    });
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td id="c15" class="container"></td>
+            <td class="result"></td>
+            <td class="code">
+                <code>
+                    var a14 = new slider({<br>
+                    &nbsp;&nbsp;&nbsp;container:"#c15",<br>
+                    &nbsp;&nbsp;&nbsp;start :0,<br>
+                    &nbsp;&nbsp;&nbsp;end:100,<br>
+                    &nbsp;&nbsp;&nbsp;step:1,<br>
+                    &nbsp;&nbsp;&nbsp;value:20,<br>
+                    &nbsp;&nbsp;&nbsp;<strong>style: { </strong><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>button_width: 30 </strong><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>button_height: 30 </strong><br>
+                    &nbsp;&nbsp;&nbsp;<strong>}</strong><br>
+                    });
+                </code>
+            </td>
+        </tr>
+
+    </table>
+
+    <script>
+        var a1 = new slider({
+            container: "#c1",
+            start: -100,
+            end: 100,
+            step: 1,
+            value: 0,
+        });
+        var a2 = new slider({
+            container: "#c2",
+            start: -100,
+            end: 100,
+            step: 1,
+            value: 0,
+            showValue: true,
+
+        });
+        var a3 = new slider({
+            container: "#c3",
+            start: -100,
+            end: 100,
+            step: 1,
+            value: 0,
+            showValue: true,
+            ondrag: change
+        });
+        var a4 = new slider({
+            container: "#c4",
+            start: -100,
+            end: 100,
+            step: 1,
+            value: 0,
+            showValue: true,
+            fixValue: true,
+            ondrag: change
+        });
+        var a5 = new slider({
+            container: "#c5",
+            start: -100,
+            end: 100,
+            step: 1,
+            value: 0,
+            showValue: true,
+            onchange: change
+        });
+        var a6 = new slider({
+            container: "#c6",
+            start: -100,
+            end: 100,
+            step: 1,
+            value: 0,
+            min: -50,
+            max: 60,
+            showValue: true,
+            ondrag: change
+        });
+        var a7 = new slider({
+            container: "#c7",
+            start: -100,
+            end: 100,
+            step: 1,
+            value: [-20, 30],
+            showValue: true,
+            ondrag: change
+        });
+        var a8 = new slider({
+            container: "#c8",
+            start: -100,
+            end: 100,
+            step: 1,
+            value: [-80, -30, 20, 70],
+            showValue: true,
+            ondrag: change
+        });
+        var a9 = new slider({
+            container: "#c9",
+            start: 0,
+            end: 100,
+            step: 1,
+            value: 60,
+            showValue: true,
+            ondrag: change,
+            changable: false
+        });
+        var a10 = new slider({
+            container: "#c10",
+            start: -100,
+            end: 100,
+            step: 10,
+            value: 0,
+            showValue: true,
+            ondrag: change,
+            pinStep: 10,
+        });
+        var a11 = new slider({
+            container: "#c11",
+            start: -100,
+            end: 100,
+            step: 10,
+            value: 0,
+            showValue: true,
+            ondrag: change,
+            pinStep: 20,
+            labelStep: 40
+        });
+
+        var a12 = new slider({
+            container: "#c12 .switch",
+            start: 0,
+            end: 1,
+            step: 1,
+            value: 0,
+            ondrag: Switch
+        });
+        var a13 = new slider({
+            container: "#c13 .switch",
+            start: 0,
+            end: 1,
+            step: 1,
+            value: 0,
+            text: ["ON", "OFF"],
+            ondrag: Switch,
+            style: { line_width: 0 }
+        });
+        var a14 = new slider({
+            container: "#c14",
+            start: 0,
+            end: 100,
+            step: 1,
+            value: 20,
+            style: {
+                margin:30
+            }
+        });
+        var a15 = new slider({
+            container: "#c15",
+            start: 0,
+            end: 100,
+            step: 1,
+            value: 20,
+            style: {
+                button_width: 30,
+                button_height: 30,
+            }
+        });
+
+        setInterval(function () {
+            var value = a9.getValue()[0];
+            if (value >= 100) { value = 0; }
+            a9.setValue([value + 3]);
+        }, 50);
+        function change(obj) {
+            $(obj.container).next("td").html(obj.values.toString())
+        }
+        function Switch(obj) {
+            $(obj.container).parent().next("td").html(obj.values.toString())
+        }
+    </script>
+</body>
+
+</html>
