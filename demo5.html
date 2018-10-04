@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/r-slider.js"></script>
+
+    <title></title>
+    <style>
+        body {
+            background: #888;
+        }
+
+        #container {
+            margin-top: 20px;
+            background: #777;
+            position: relative;
+            width: 70px;
+            height: 30px;
+            margin-left: calc(50% - 35px);
+            border: 2px solid #aaa;
+            border-radius: 45px;
+            box-shadow: inset 2px 2px 10px 1px #222;
+        }
+
+        #result {
+            margin-top: 20px;
+            width: 70px;
+            height: 30px;
+            margin-left: calc(50% - 35px);
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+        }
+
+
+        #container .r-slider-text {
+            font-size: 13px;
+        }
+
+            #container .r-slider-text[data-index="0"] {
+                color: lightgreen;
+            }
+
+            #container .r-slider-text[data-index="1"] {
+                color: red;
+            }
+
+        #container .r-slider-button {
+            background-image: url(image/slider.jpg);
+            background-size: cover;
+            border-radius: 100%;
+            box-shadow: 2px 2px 9px 1px #222;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="container"></div>
+    <div id="result">false</div>
+    <script>
+        var A = new slider({
+            start: 0,
+            step: 1,
+            end: 1,
+            value: 0,
+            container: "#container",
+            ondrag: showResult,
+
+            text: ["ON", "OFF"],
+            style: {
+                line_width: 0,
+                button_width: 24,
+                button_height: 24,
+                margin: 3
+            }
+        });
+        function showResult(obj) {
+            var state;
+            var result = obj.values[0];
+            if (result === 0) { state = false; }
+            else if (result === 1) { state = true; }
+            $("#result").html(String(state));
+        }
+    </script>
+</body>
+</html>
