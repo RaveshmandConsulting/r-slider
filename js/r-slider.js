@@ -210,7 +210,7 @@ function slider(config) {
             return style;
         },
         getClient: function (e, axis) {
-            if (canvas.isMobile) {
+            if (this.state.isMobile) {
                 return e.changedTouches[0]["client" + axis];
             }
             else {
