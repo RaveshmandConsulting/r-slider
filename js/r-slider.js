@@ -1,6 +1,4 @@
 ﻿//////////r-slider.js//////////////
-
-
 function slider(config) {
     var a = {
         state: {},
@@ -42,7 +40,6 @@ function slider(config) {
             if (position === "static") {
                 container.css("position", "relative");
             }
-
         },
         updateState: function () {
             this.state.step = this.state.step || 1;
@@ -83,7 +80,6 @@ function slider(config) {
                 range: this.state.range,
                 pinStep: this.state.pinStep,
             });
-
             str += Labels({
                 start: this.state.start,
                 end: this.state.end,
@@ -106,7 +102,6 @@ function slider(config) {
                             value: this.state.value,
                             range: this.state.range,
                             start: this.state.start,
-
                         });
                     }
                 }
@@ -131,7 +126,6 @@ function slider(config) {
                     showValue: this.state.showValue,
                     colors: this.state.colors
                 });
-
             }
             str += Space({
                 index: length,
@@ -441,8 +435,6 @@ function slider(config) {
             else if (typeof selector === "string") { $(selector).unbind(event, $.proxy(action, this)); }
             else { selector.unbind(event, $.proxy(action, this)); }
         },
-
-
     }
     a.init(config);
     return a;
@@ -485,7 +477,6 @@ function RSliderCalculator(obj) {
     a.init(obj);
     return a;
 }
-
 function Pins(obj) {
     var pinStep = obj.pinStep;
     if (!pinStep) { return ""; }
@@ -507,18 +498,12 @@ function Pins(obj) {
             percent: percent
         });
     }
-
-
-
     return str;
 }
 
 function Pin(obj) {
     var sn = obj.styleName;
     var percent = obj.percent;
-
-
-
     function getStyle() {
         var sstr = '';
         sstr += 'position:absolute;';
@@ -529,7 +514,6 @@ function Pin(obj) {
         sstr += sn.StartSide + ':' + percent + '%;';
         return sstr;
     }
-
     var str = '';
     str += '<div class="r-slider-pin" style="' + getStyle() + '"></div>';
     return str;
@@ -556,9 +540,7 @@ function Labels(obj) {
             value: value
         });
         value += labelStep;
-
     }
-
     return str;
 }
 
@@ -566,10 +548,6 @@ function Label(obj) {
     var sn = obj.styleName;
     var percent = obj.percent;
     var value = obj.value;
-
-
-
-
     function getStyle() {
         var sstr = 'position: absolute;line-height: 2px;text-align: center;';
         sstr += sn.Thickness + ': 40px;';
@@ -591,7 +569,6 @@ function Fill(obj) {
     var value = obj.value;
     var range = obj.range;
     var start = obj.start;
-
     var calc = new RSliderCalculator({
         start: start,
         range: range
@@ -669,9 +646,7 @@ function Text(obj) {
     var text = obj.text
     var sn = obj.styleName;
     var index = obj.index;
-
     var length = value.length;
-
     function getStyle() {
         var size = style['button_' + sn.Thickness];
         var tstr = 'position:absolute;text-align:center;';
@@ -714,7 +689,6 @@ function Line(obj) {
     }
     return '<div class="r-slider-line" style="' + getStyle() + '"></div>';
 }
-
 
 function Button(obj) {
     var value = obj.value;
